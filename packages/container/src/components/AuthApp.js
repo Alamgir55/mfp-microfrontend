@@ -7,7 +7,7 @@ export default ({ onSignIn }) => {
   const history = useHistory();
 
   useEffect(() => {
-    const { onParentNaviage } = mount(ref.current, {
+    const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;
@@ -20,7 +20,7 @@ export default ({ onSignIn }) => {
         onSignIn();
       }
     });
-    history.listen(onParentNaviage);
+    history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref} />
