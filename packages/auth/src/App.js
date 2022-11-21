@@ -1,13 +1,16 @@
 import React from 'react';
 import { Switch, Route, Router } from 'react-router-dom';
-import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from '@material-ui/core/styles';
 
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'au'
-})
+  productionPrefix: 'au',
+});
 
 export default ({ history, onSignIn }) => {
   return (
@@ -26,4 +29,4 @@ export default ({ history, onSignIn }) => {
       </StylesProvider>
     </div>
   );
-}
+};

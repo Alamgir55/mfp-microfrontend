@@ -11,8 +11,8 @@ const devConfig = {
   devServer: {
     port: 8080,
     historyApiFallback: {
-      index: '/index.html'
-    }
+      index: 'index.html',
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -21,9 +21,9 @@ const devConfig = {
         marketing: 'marketing@http://localhost:8081/remoteEntry.js',
         auth: 'auth@http://localhost:8082/remoteEntry.js',
       },
-      shared: packageJson.dependencies
+      shared: packageJson.dependencies,
     }),
-  ]
-}
+  ],
+};
 
 module.exports = merge(commonConfig, devConfig);
