@@ -13,10 +13,10 @@ export default ({ history }) => {
   return (
     <div>
       <StylesProvider generateClassName={generateClassName}>
-        <Router location={history.location} navigator={history} >
+        <Router history={history}>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={Landing} />
           </Switch>
         </Router>
       </StylesProvider>
